@@ -2,26 +2,28 @@
    DARK PINK NEON LOVE THEME
 =========================== */
 
-
 *{
-
     margin:0;
     padding:0;
     box-sizing:border-box;
     scroll-behavior:smooth;
-
 }
-
-
 
 body{
 
     font-family:'Poppins',sans-serif;
 
     background:
+        linear-gradient(
+            rgba(20,0,20,.65),
+            rgba(20,0,20,.75)
+        ),
+        url("images/us.jpg");
 
-    radial-gradient(circle at top,#3b0928,#120012 45%,#050005);
-
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
 
     color:#ffd6ec;
 
@@ -29,1076 +31,649 @@ body{
 
 }
 
-
-
-
-
 /* ===========================
-   NEON BACKGROUND GLOW
+   DARK OVERLAY
 =========================== */
-
 
 body::before{
 
-
     content:"";
-
 
     position:fixed;
 
+    inset:0;
 
-    width:450px;
+    background:
+    linear-gradient(
+        rgba(255,20,147,.10),
+        rgba(0,0,0,.45)
+    );
 
-    height:450px;
-
-
-    background:#ff1493;
-
-
-    border-radius:50%;
-
-
-    filter:blur(160px);
-
-
-    top:-150px;
-
-    left:-150px;
-
-
-    opacity:.35;
-
+    backdrop-filter:blur(3px);
 
     z-index:-1;
 
-
 }
-
-
-
-body::after{
-
-
-    content:"";
-
-
-    position:fixed;
-
-
-    width:450px;
-
-    height:450px;
-
-
-    background:#ff69b4;
-
-
-    border-radius:50%;
-
-
-    filter:blur(160px);
-
-
-    bottom:-150px;
-
-    right:-150px;
-
-
-    opacity:.25;
-
-
-    z-index:-1;
-
-
-}
-
-
-
-
 
 /* ===========================
    FLOATING HEARTS
 =========================== */
 
-
 .hearts span{
-
 
     position:fixed;
 
-
     bottom:-50px;
-
 
     color:#ff69b4;
 
-
     font-size:25px;
-
 
     z-index:1;
 
-
     pointer-events:none;
 
-
-    filter:
-
-    drop-shadow(0 0 10px #ff1493);
-
+    filter:drop-shadow(0 0 10px #ff1493);
 
     animation:heartFloat 10s infinite;
 
-
 }
 
-
-
-
-
 @keyframes heartFloat{
-
 
     0%{
 
         transform:
-
         translateY(0)
-
         rotate(0);
-
 
         opacity:1;
 
     }
 
-
     100%{
 
-
         transform:
-
         translateY(-120vh)
-
         rotate(360deg);
-
 
         opacity:0;
 
     }
 
-
 }
-
-
-
-
 
 /* ===========================
    HERO
 =========================== */
 
-
 .hero{
-
 
     min-height:100vh;
 
-
     display:flex;
-
 
     justify-content:center;
 
-
     align-items:center;
-
 
     padding:30px;
 
-
     position:relative;
-
 
     z-index:5;
 
-
 }
-
-
-
-
 
 .glass{
 
-
     max-width:750px;
-
 
     text-align:center;
 
-
     padding:70px 50px;
 
+    background:rgba(0,0,0,.25);
 
-    background:
-
-
-    rgba(255,255,255,.08);
-
-
-
-    backdrop-filter:blur(20px);
-
-
+    backdrop-filter:blur(18px);
 
     border-radius:40px;
 
-
-
-    border:
-
-    1px solid rgba(255,105,180,.4);
-
-
+    border:1px solid rgba(255,105,180,.35);
 
     box-shadow:
-
-
-    0 0 40px rgba(255,20,147,.25),
-
-    inset 0 0 30px rgba(255,105,180,.15);
-
-
+    0 0 35px rgba(255,20,147,.30),
+    inset 0 0 20px rgba(255,255,255,.08);
 
 }
-
-
-
-
 
 .hero h1{
 
-
     font-family:'Great Vibes',cursive;
-
 
     font-size:90px;
 
-
-    color:#ffb6dc;
-
+    color:#ffd4ec;
 
     text-shadow:
-
-
     0 0 10px #ff69b4,
-
     0 0 30px #ff1493,
-
     0 0 60px #ff1493;
 
-
-
 }
-
-
 
 .hero p{
 
-
     margin-top:25px;
-
 
     font-size:18px;
 
-
     line-height:1.8;
 
-
-    color:#ffd6ec;
-
+    color:#fff2fa;
 
 }
 
-
-
-
-
 /* ===========================
-   BUTTON NEON
+   BUTTON
 =========================== */
-
 
 .btn{
 
-
     display:inline-block;
-
 
     margin-top:35px;
 
-
     padding:17px 45px;
-
 
     color:white;
 
-
     text-decoration:none;
-
 
     border-radius:50px;
 
-
-
     background:
-
-
     linear-gradient(
-
-    135deg,
-
-    #ff1493,
-
-    #ff69b4
-
+        135deg,
+        #ff1493,
+        #ff69b4
     );
 
-
-
     box-shadow:
-
-
     0 0 20px #ff1493,
-
     0 0 40px rgba(255,20,147,.5);
-
-
 
     transition:.4s;
 
-
-
 }
-
-
 
 .btn:hover{
 
-
     transform:
-
     translateY(-8px)
-
     scale(1.08);
 
-
-
     box-shadow:
-
-
-    0 0 30px #ff69b4,
-
+    0 0 35px #ff69b4,
     0 0 70px #ff1493;
 
-
 }
-
-
-
-
 
 /* ===========================
    LETTER SECTION
 =========================== */
 
-
 .letter-section{
-
-
-    min-height:100vh;
-
-
-    display:flex;
-
-
-    justify-content:center;
-
-
-    align-items:center;
-
-
-    padding:80px 20px;
-
-
-}
-
-
-
-
-
-.scroll-letter{
-
 
     width:100%;
 
+    padding:80px 20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.letter{
 
     max-width:850px;
 
+    width:100%;
 
+    padding:45px;
 
-    background:
+    background:rgba(0,0,0,.30);
 
-
-    linear-gradient(
-
-    180deg,
-
-    #210019,
-
-    #120010
-
-    );
-
-
+    backdrop-filter:blur(18px);
 
     border-radius:30px;
 
-
-
-    border:
-
-    1px solid rgba(255,105,180,.5);
-
-
+    border:1px solid rgba(255,105,180,.35);
 
     box-shadow:
+    0 0 35px rgba(255,20,147,.25);
 
-
-    0 0 40px rgba(255,20,147,.35);
-
-
+    color:white;
 
 }
 
-
-
-
-
-.paper-top{
-
+.letter h2{
 
     text-align:center;
 
+    font-size:42px;
 
-    padding:35px;
+    color:#ffb7df;
 
-
-
-    font-family:'Great Vibes',cursive;
-
-
-    font-size:45px;
-
-
-    color:#fff;
-
-
-
-    background:
-
-
-    linear-gradient(
-
-    135deg,
-
-    #ff1493,
-
-    #8b0057
-
-    );
-
-
+    margin-bottom:30px;
 
     text-shadow:
-
-
-    0 0 15px white;
-
+    0 0 10px #ff1493,
+    0 0 20px #ff69b4;
 
 }
 
+.letter p{
 
+    font-size:17px;
 
+    line-height:2;
 
-.paper-content{
+    text-align:justify;
 
-
-    padding:70px 90px;
-
-
-}
-
-
-
-.paper-content h2{
-
-
-    text-align:center;
-
-
-    font-family:'Great Vibes',cursive;
-
-
-    font-size:45px;
-
-
-    color:#ff9bd3;
-
-
-    text-shadow:
-
-
-    0 0 15px #ff1493;
-
+    color:#fff3fa;
 
 }
-
-
-
-
-
-.paper-content p{
-
-
-    color:#ffd6ec;
-
-
-    font-size:18px;
-
-
-    line-height:2.1;
-
-
-    margin-bottom:25px;
-
-
-}
-
-
-
-
 
 /* ===========================
    MESSAGE CARDS
 =========================== */
 
-
 .card{
 
+    width:100%;
+    max-width:900px;
 
-    background:
+    margin:60px auto;
 
+    padding:50px;
 
-    rgba(255,255,255,.08);
+    background:rgba(0,0,0,.28);
 
+    backdrop-filter:blur(18px);
 
+    border-radius:35px;
 
-    backdrop-filter:blur(15px);
-
-
-
-    border-radius:30px;
-
-
-
-    padding:45px;
-
-
-
-    border:
-
-    1px solid rgba(255,105,180,.3);
-
-
+    border:1px solid rgba(255,105,180,.35);
 
     box-shadow:
-
-
-    0 0 40px rgba(255,20,147,.2);
-
-
-}
-
-
-
-
-
-.card h2{
-
-
-    text-align:center;
-
-
-    font-family:'Great Vibes',cursive;
-
-
-    font-size:55px;
-
-
-    color:#ffb6dc;
-
-
-
-    text-shadow:
-
-
-    0 0 20px #ff1493;
-
-
-}
-
-
-
-
-.message-grid{
-
-
-    display:flex;
-
-
-    justify-content:center;
-
-
-    gap:30px;
-
-
-    flex-wrap:wrap;
-
-
-}
-
-
-
-
-.message-grid div{
-
-
-    width:200px;
-
-
-    min-height:150px;
-
-
-    display:flex;
-
-
-    justify-content:center;
-
-
-    align-items:center;
-
-
-    flex-direction:column;
-
-
-
-    background:
-
-
-    rgba(255,20,147,.12);
-
-
-
-    border-radius:25px;
-
-
-
-    border:
-
-    1px solid rgba(255,105,180,.4);
-
-
-
-    color:#ffd6ec;
-
+        0 0 30px rgba(255,20,147,.25),
+        inset 0 0 20px rgba(255,255,255,.06);
 
     transition:.4s;
 
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 0 45px rgba(255,20,147,.45),
+        inset 0 0 20px rgba(255,255,255,.08);
 
 }
 
+.card h2{
 
+    text-align:center;
 
+    font-family:'Great Vibes',cursive;
+
+    font-size:55px;
+
+    color:#ffd1ea;
+
+    margin-bottom:40px;
+
+    text-shadow:
+        0 0 15px #ff1493,
+        0 0 35px #ff69b4;
+
+}
+
+.message-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.message-grid div{
+
+    padding:35px 25px;
+
+    min-height:180px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,105,180,.30);
+
+    color:#fff;
+
+    transition:.4s;
+
+}
 
 .message-grid div:hover{
 
-
     transform:
+        translateY(-12px)
+        scale(1.05);
 
-
-    translateY(-15px)
-
-    scale(1.05);
-
-
+    background:rgba(255,20,147,.15);
 
     box-shadow:
-
-
-    0 0 30px #ff1493;
-
+        0 0 30px rgba(255,20,147,.5);
 
 }
 
+.message-grid h3{
 
+    font-size:24px;
 
+    margin-bottom:15px;
 
+    color:#ffd4eb;
+
+}
+
+.message-grid p{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:#ffeef8;
+
+}
+
+/* ===========================
+   SECTION TITLE
+=========================== */
+
+.section-title{
+
+    text-align:center;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:65px;
+
+    color:#ffd0ea;
+
+    margin-bottom:50px;
+
+    text-shadow:
+        0 0 10px #ff1493,
+        0 0 35px #ff69b4;
+
+}
+
+/* ===========================
+   IMAGE FRAME
+=========================== */
+
+.photo-frame{
+
+    width:260px;
+
+    height:260px;
+
+    margin:40px auto;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    border:3px solid rgba(255,182,219,.7);
+
+    box-shadow:
+        0 0 25px #ff1493,
+        0 0 60px rgba(255,20,147,.5);
+
+    transition:.5s;
+
+}
+
+.photo-frame img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.photo-frame:hover{
+
+    transform:scale(1.05);
+
+}
+
+.photo-frame:hover img{
+
+    transform:scale(1.12);
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#180012;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff1493;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ff69b4;
+
+}
 
 /* ===========================
    FOOTER
 =========================== */
 
-
 footer{
 
+    padding:60px 20px;
 
     text-align:center;
 
+    color:#ffd4eb;
 
-    padding:40px;
+    font-size:16px;
 
+    background:rgba(0,0,0,.30);
 
-    color:#ff9bd3;
+    backdrop-filter:blur(15px);
 
-
-    text-shadow:
-
-
-    0 0 15px #ff1493;
-
+    border-top:1px solid rgba(255,105,180,.25);
 
 }
 
+footer p{
 
+    line-height:2;
 
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    animation:fadeUp 1s forwards;
+
+}
+
+@keyframes fadeUp{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.glow{
+
+    animation:glow 3s infinite alternate;
+
+}
+
+@keyframes glow{
+
+    from{
+
+        filter:drop-shadow(0 0 10px #ff1493);
+
+    }
+
+    to{
+
+        filter:drop-shadow(0 0 35px #ff69b4);
+
+    }
+
+}
 
 /* ===========================
    MOBILE
 =========================== */
 
-
-@media(max-width:600px){
-
+@media(max-width:768px){
 
 .hero h1{
 
-
-    font-size:60px;
-
+    font-size:55px;
 
 }
 
+.hero p{
 
+    font-size:16px;
+
+}
 
 .glass{
 
-
-    padding:45px 25px;
-
-
-}
-
-
-
-.paper-content{
-
-
     padding:40px 25px;
 
+}
+
+.letter{
+
+    padding:30px 22px;
 
 }
 
+.letter h2{
 
-
-.paper-content p{
-
-
-    font-size:16px;
-
+    font-size:32px;
 
 }
 
+.letter p{
 
+    font-size:15px;
+
+}
+
+.card{
+
+    padding:30px 20px;
+
+}
 
 .card h2{
 
-
-    font-size:42px;
-
+    font-size:38px;
 
 }
 
+.section-title{
+
+    font-size:48px;
 
 }
 
-/* ===========================
-   FIX LETTER DESIGN
-=========================== */
+.photo-frame{
 
+    width:200px;
 
-.letter-section{
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:80px 20px;
+    height:200px;
 
 }
 
+.message-grid{
 
-
-.envelope-container{
-
-    position:relative;
-
-    text-align:center;
+    grid-template-columns:1fr;
 
 }
 
+.btn{
 
-
-.envelope{
-
-    width:600px;
-
-    height:400px;
-
-    background:#b00062;
-
-    position:relative;
-
-    border-radius:15px;
-
-    overflow:hidden;
-
-    box-shadow:
-
-    0 0 40px rgba(255,20,147,.7);
+    padding:15px 35px;
 
 }
-
-
-
-.letter-paper{
-
-
-    position:absolute;
-
-
-    width:90%;
-
-
-    left:5%;
-
-
-    bottom:-500px;
-
-
-    background:#fff;
-
-
-    color:#5a2945;
-
-
-    padding:35px;
-
-
-    border-radius:15px;
-
-
-    transition:1s ease;
-
-
-    max-height:80vh;
-
-
-    overflow-y:auto;
-
-
-    z-index:2;
-
-
-    box-shadow:
-
-
-    0 0 40px rgba(255,255,255,.8);
-
-
-}
-
-
-
-.letter-paper h2{
-
-
-    font-family:'Great Vibes',cursive;
-
-
-    font-size:40px;
-
-
-    color:#d63384;
-
-
-    text-align:center;
-
-
-    margin-bottom:15px;
-
-
-}
-
-
-
-.letter-paper p{
-
-
-    font-size:16px;
-
-
-    line-height:1.8;
-
-
-    text-align:left;
-
-
-    color:#5a2945;
-
-
-}
-
-
-
-.envelope.open .letter-paper{
-
-
-    bottom:30px;
-
-
-}
-
-
-
-.flap{
-
-    z-index:5;
-
-}
-
-/* ===========================
-   LETTER NEON GLASS CARD
-=========================== */
-
-.letter-section {
-    width: 100%;
-    padding: 80px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.letter {
-    max-width: 850px;
-    width: 100%;
-
-    padding: 45px;
-
-    background: rgba(255, 255, 255, 0.08);
-
-    border: 1px solid rgba(255, 105, 180, 0.35);
-
-    border-radius: 30px;
-
-    backdrop-filter: blur(15px);
-
-    box-shadow:
-        0 0 25px rgba(255, 20, 147, 0.25),
-        inset 0 0 20px rgba(255, 105, 180, 0.15);
-
-    color: #fff;
-
-    animation: letterGlow 3s infinite alternate;
-}
-
-
-.letter h2 {
-
-    text-align: center;
-
-    font-size: 38px;
-
-    margin-bottom: 35px;
-
-    color: #ff8bd8;
-
-    text-shadow:
-        0 0 10px #ff1493,
-        0 0 20px #ff69b4;
-
-}
-
-
-
-.letter p {
-
-    font-size: 16px;
-
-    line-height: 1.9;
-
-    color: #ffe6f5;
-
-    text-align: justify;
-
-}
-
-
-
-.letter strong {
-
-    color: #ff9ddd;
-
-    text-shadow:
-        0 0 8px rgba(255,105,180,.8);
-
-}
-
-
-
-@keyframes letterGlow {
-
-    from {
-
-        box-shadow:
-        0 0 25px rgba(255,20,147,.25),
-        inset 0 0 20px rgba(255,105,180,.15);
-
-    }
-
-
-    to {
-
-        box-shadow:
-        0 0 45px rgba(255,20,147,.45),
-        inset 0 0 30px rgba(255,105,180,.25);
-
-    }
 
 }
