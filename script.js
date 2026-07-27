@@ -3,7 +3,7 @@
 =========================== */
 
 
-function createHeart(){
+function createHeart() {
 
     const heart = document.createElement("span");
 
@@ -13,31 +13,31 @@ function createHeart(){
     heart.style.left = Math.random() * 100 + "%";
 
 
-    heart.style.fontSize = 
-    Math.random() * 20 + 15 + "px";
+    heart.style.fontSize =
+        Math.random() * 20 + 15 + "px";
 
 
     heart.style.animationDuration =
-    Math.random() * 5 + 5 + "s";
+        Math.random() * 5 + 5 + "s";
 
 
     document.querySelector(".hearts")
-    .appendChild(heart);
+        .appendChild(heart);
 
 
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
         heart.remove();
 
-    },10000);
+    }, 10000);
 
 
 }
 
 
 
-setInterval(createHeart,2000);
+setInterval(createHeart, 2000);
 
 
 
@@ -52,7 +52,7 @@ setInterval(createHeart,2000);
 const button = document.querySelector(".btn");
 
 
-button.addEventListener("click", function(e){
+button.addEventListener("click", function (e) {
 
 
     e.preventDefault();
@@ -63,11 +63,13 @@ button.addEventListener("click", function(e){
 
     letter.scrollIntoView({
 
-        behavior:"smooth"
+        behavior: "smooth"
 
     });
 
+    const music = document.getElementById("bgMusic");
 
+    music.play().catch(() => { });
 
 });
 
@@ -83,32 +85,32 @@ button.addEventListener("click", function(e){
 
 
 const sections = document.querySelectorAll(
-".letter-section, .message-section, footer"
+    ".letter-section, .message-section, footer"
 );
 
 
 
-function reveal(){
+function reveal() {
 
 
-    sections.forEach(section=>{
+    sections.forEach(section => {
 
 
         const windowHeight =
-        window.innerHeight;
+            window.innerHeight;
 
 
         const top =
-        section.getBoundingClientRect().top;
+            section.getBoundingClientRect().top;
 
 
 
-        if(top < windowHeight - 100){
+        if (top < windowHeight - 100) {
 
 
-            section.style.opacity="1";
+            section.style.opacity = "1";
 
-            section.style.transform="translateY(0)";
+            section.style.transform = "translateY(0)";
 
 
         }
@@ -123,18 +125,18 @@ function reveal(){
 
 
 
-sections.forEach(section=>{
+sections.forEach(section => {
 
 
-    section.style.opacity="0";
+    section.style.opacity = "0";
 
 
-    section.style.transform=
-    "translateY(50px)";
+    section.style.transform =
+        "translateY(50px)";
 
 
-    section.style.transition=
-    "1s ease";
+    section.style.transition =
+        "1s ease";
 
 
 });
@@ -142,8 +144,8 @@ sections.forEach(section=>{
 
 
 window.addEventListener(
-"scroll",
-reveal
+    "scroll",
+    reveal
 );
 
 
